@@ -1,0 +1,1 @@
+Join our development oriented discord: https://discord.gg/mYSD7MGaSk

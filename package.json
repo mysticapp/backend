@@ -18,12 +18,17 @@
   },
   "homepage": "https://github.com/mysticapp/backend#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "express": "^4.17.2",
+    "express-session": "^1.17.2",
     "mongoose": "^6.2.1",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "@types/express": "^4.17.13"
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "^4.17.13",
+    "@types/passport": "^1.0.7",
+    "@types/passport-local": "^1.0.34"
   }
 }

@@ -15,7 +15,12 @@ const UserSchema =  new Schema({
     email: String,
     profile: Object,
     avatar: String, 
-    password: String
+    password: String,
+    guilds: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Guild',
+        default: []
+    }]
 })
 
 UserSchema.plugin(passportLocalMongoose, {

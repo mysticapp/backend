@@ -16,10 +16,22 @@ app.use(cookieParser())
 app.use(passport.initialize());
 app.use(passport.session());
 
+/* Models initialisation */
+
+import './models/Channel';
+import './models/Guild';
+import './models/Role';
+import './models/User';
 
 /* Routes */
 
 import Authentication from './routes/Authentication';
 app.use('/auth/', Authentication);
+
+import Users from './routes/Users';
+app.use('/users/', Users)
+
+import Guilds from './routes/Guilds';
+app.use('/guilds/', Guilds)
 
 app.listen(config.PORT, () => console.log('Webserver is ready!'))

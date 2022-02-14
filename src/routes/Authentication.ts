@@ -17,7 +17,8 @@ router.get("/logout", (req: Request, res: Response) => {
 router.post("/register", (req: Request, res: Response, next: NextFunction) => {
   const user = new User({
     username: req.body.username,
-  });
+    email: req.body.email
+  }, {versionKey: false});
 
   (User as any).register(user, req.body.password, (err: Error, _: any) => {
     if ((err) || !(user)) {

@@ -5,3 +5,5 @@ const schema = new Schema({
     hex: String,
     permissions: Array
 })
+
+export default model('Role', schema)

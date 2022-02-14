@@ -1,7 +1,8 @@
 import { model, Schema } from "mongoose";
 import { createToken, createDiscriminator } from "../helpers/UserHelpers";
+import passportLocalMongoose from 'passport-local-mongoose';
 
-export default model("User", new Schema({
+const UserSchema =  new Schema({
     token: {
         type: String,
         default: createToken(25)
@@ -15,5 +16,11 @@ export default model("User", new Schema({
     profile: Object,
     avatar: String, 
     password: String
-}));
+})
+
+UserSchema.plugin(passportLocalMongoose, {
+    selectFields: '_id, username, email, token'
+})
+
+export default model("User", UserSchema);
 

@@ -24,7 +24,7 @@ const UserSchema =  new Schema({
 })
 
 UserSchema.plugin(passportLocalMongoose, {
-    selectFields: '_id, username, email, token'
+    selectFields: '_id, username, token, discriminator, email, profile, avatar, guilds'
 })
 
 export default model("User", UserSchema);

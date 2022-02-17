@@ -94,8 +94,8 @@ router.post(
         }
 
         req.logIn(user, async (lerr: Error) => {
-          delete user.hash;
-          delete user.salt;
+          user.hash = undefined;
+          user.salt = undefined;
           return res.status(200).send({ user });
         });
       });

@@ -18,9 +18,11 @@ app.use(passport.session());
 
 /* Models initialisation */
 
+import './models/Role';
+import './models/Message';
+import './models/GuildMember';
 import './models/Channel';
 import './models/Guild';
-import './models/Role';
 import './models/User';
 
 /* Routes */

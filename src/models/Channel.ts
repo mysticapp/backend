@@ -9,10 +9,12 @@ const schema = new Schema({
     guild: {
         type: Schema.Types.ObjectId,
         ref: 'Guild'
-    }
-    /* privateRoles: [{
-        ref: 'Role' //For future usage for private channels. 
-    }] */
+    },
+    description: String,
+    privateRoles: [{
+        ref: 'Role', //For future usage for private channels.,
+        type: Schema.Types.ObjectId
+    }]
 })
 
 export default model('Channel', schema);

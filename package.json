@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/app.ts"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,8 @@
     "mongoose": "^6.2.1",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^6.1.0"
+    "passport-local-mongoose": "^6.1.0",
+    "zod": "^3.19.1"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",

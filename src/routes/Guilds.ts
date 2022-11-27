@@ -79,6 +79,10 @@ router.get(
   },
 );
 
+import Channels from './GuildChannels';
+
+router.use('/channels', Channels);
+
 router.delete('/:guildID/', async (req: Request, res: Response) => {
   //TODO: Deleting guild
 })

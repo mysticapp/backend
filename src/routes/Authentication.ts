@@ -75,7 +75,6 @@ router.post(
   async (req: Request, res: Response, next: NextFunction) => {
     passport.authenticate("local", (err: Error, user: any, info: any) => {
       if ((err) || (!user)) {
-        console.log((err) ? err : "No User");
         return res.status(500).send({
           error: ((err) && (err.message))
             ? err.message
@@ -96,7 +95,13 @@ router.post(
         req.logIn(user, async (lerr: Error) => {
           user.hash = undefined;
           user.salt = undefined;
-          return res.status(200).send({ user });
+          const fetchedUser = await User.findById(user._id).populate({
+            path: 'guilds',
+            populate: {
+              path: 'channels'
+            }
+          })
+          return res.status(200).json(fetchedUser);
         });
       });
     })(req, res, next);

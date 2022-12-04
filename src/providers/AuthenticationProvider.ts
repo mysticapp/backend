@@ -1,5 +1,5 @@
 import passport from "passport";
-import { Strategy} from "passport-local";
+import { Strategy } from "passport-local";
 import User from "../models/User";
 
 try {
